@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"
+>
+
+<meta charset="UTF-8"/>
+<head>
+    <title>Spring Security Example </title>
+</head>
+<body>
+<div ><span th:text="${user}? '你已经登录你的用户名称为'+${user.username}:'谁知道你这啥角色'"></span> </div>
+
+<form th:action="@{/loginUser}" method="post">
+    <div><label> 用户名 : <input type="text" name="username"/> </label></div>
+    <div><label> 密  码 : <input type="password" name="password"/> </label></div>
+    <div><label> 记住我 : <input type="checkbox" name="rememberMe"/> </label></div>
+    <div><input type="submit" value="登录"/></div>
+</form>
+<div shiro:user=""> 现在你登录了</div>
+</body>
+</html>

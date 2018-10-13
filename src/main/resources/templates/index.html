@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h1>shiro安全框架demo</h1>
+<p>点击 <a th:href="@{/hello}">这里</a> 打个招呼吧</p>
+<p>Hello, <shiro:principal property="username" />, how are you today?</p>
+<div><shiro:principal/></div>
+<div>这里测试 shiro标签的使用</div>
+<div shiro:guest="">兄弟,你没有登录</div>
+<div shiro:user=""> 现在你登录了</div>
+<div shiro:authenticated="">认证通过 然后呢 你没有被记住</div>
+<div shiro:notauthenticated="">认证通过 你被记住了</div>
+<div shiro:hasRole="root">你有这个角色</div>
+<div shiro:lacksRole="root">你没有这个角色</div>
+<div shiro:hasAllRoles="root,1">你拥有这些角色集合(所有)</div>
+<div shiro:hasAnyRoles="root,1">你拥有这个角色集合(之一)</div>
+<div shiro:hasPermission="add">你拥有这个add 这个权限</div>
+<div shiro:lacksPermission="del">你没拥有这个del 这个权限</div>
+<div shiro:hasAllPermissions="del,add">你拥有这个del和add 这个权限</div>
+<div shiro:hasAnyPermissions="del,add">你拥有这个del或add 这个权限</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+
+<meta charset="UTF-8"/>
+<head>
+    <title>Spring Security Example </title>
+</head>
+<body>
+<div ><span th:text="${user}? '你已经登录你的用户名称为'+${user.username}:''"></span> </div>
+<div>未授权403</div>
+</body>
+</html>
